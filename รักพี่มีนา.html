@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ถึงพี่มีนาของน้องเนฟ 💌</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffe6f0, #ffd6ec);
+      font-family: 'Prompt', sans-serif;
+      color: #4d004d;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin: 1rem auto;
+      max-width: 600px;
+    }
+    .stickers {
+      margin-top: 2rem;
+    }
+    .stickers img {
+      width: 120px;
+      margin: 0 10px;
+    }
+    .heart-btn {
+      margin-top: 3rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      background-color: #ff99cc;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 2rem;
+      animation: float 3s ease-out forwards;
+    }
+    @keyframes float {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-150px);
+      }
+    }
+  </style><style>
+  .floating {
+    position: absolute;
+    animation: floatUp 10s linear infinite;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) scale(1.2);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <script>
+    const floatingStickers = [
+      "https://cdn.discordapp.com/attachments/1072549543549354055/1361731785662271809/IMG_2335.jpg?ex=67ffd30d&is=67fe818d&hm=58e257e2146db767ccc15b7555e1e0c3539bafcea0d4cff2a78a6b2649d932bd&", // แมวดำ
+      "https://cdn.discordapp.com/attachments/1072549543549354055/1361731800002465923/IMG_1995.png?ex=67ffd310&is=67fe8190&hm=eedf32417e1c638080591a717a06298d66805d5478d122d1a755cd3318fead52&"  // แฮมสเตอร์สีส้ม
+    ];
+  
+    function createFloatingSticker() {
+      const img = document.createElement("img");
+      img.src = floatingStickers[Math.floor(Math.random() * floatingStickers.length)];
+      img.className = "floating";
+      img.style.width = "60px";
+      img.style.left = Math.random() * 100 + "vw";
+      img.style.top = "25vh";
+      document.body.appendChild(img);
+      setTimeout(() => img.remove(), 10000); // ลบหลังลอยเสร็จ
+    }
+  
+    setInterval(() => {
+      createFloatingSticker();
+    }, 2000); // ทุก 2 วินาทีมีสติ๊กเกอร์ลอยขึ้นมา
+  </script>
+  <h1>ถึงพี่มีนาของน้องเนฟ 💌</h1>
+  <p>ขอโทษที่น้องอาจจะทำให้พี่มีนาไม่สบายใจ น้องเสียใจมากจริง ๆ น้องอยากขอโทษจากใจเลย น้องอยากง้อพี่มีนาจนกว่าจะได้คุยกันอีก แล้วกลับมารักกันเหมือนเดิมนะงับ 💕</p>
+  <p>ทุกคืนน้องคิดถึงพี่มีนาตลอด นอนร้องไห้ทุกวันเลย คิดถึงพี่มีนามาก ๆๆๆๆๆ คิดถึงน้องเน่า น้องจุ๋ม น้องปื๊ด น้องบิ๊ก น้องไมค์ด้วย 🥺</p>
+  <p>รักพี่มีนาที่สุดในโลกเลยนะงับ 🖤</p>
+  <p><strong>จากคนที่รักพี่มีนาที่สุดดดด 😽</strong></p>
+
+  <div class="stickers">
+    <img src="https://cdn.discordapp.com/attachments/1072549543549354055/1361729315875590274/IMG_3895.jpg?ex=67ffd0c0&is=67fe7f40&hm=b9b8e1c3709e4d8e325f44174429e0f721bdd59080bc56b58dabaae6fcdb8570&" alt="แมวดำ">
+    <img src="https://cdn.discordapp.com/attachments/1072549543549354055/1361729329200890168/IMG_1554.jpg?ex=67ffd0c3&is=67fe7f43&hm=e6a34e95aee54a7cd8f03c9835a8c9f13dd65ea87890b107133e587887f37959&" alt="แฮมสเตอร์สีส้ม">
+  </div>
+  <p><em>(คิดถึงนะงับกลับมาคุยกันนะงับจุ๋มๆ)</em></p>
+
+  <button class="heart-btn" onclick="releaseHeart()">กดตรงนี้ถ้ารักพี่มีนา 💖</button>
+
+  <script>
+    function releaseHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.textContent = "💖";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 3000);
+    }
+    setInterval(() => {
+      if (Math.random() < 0.05) releaseHeart();
+    }, 500);
+  </script>
+</body>
+</html>
